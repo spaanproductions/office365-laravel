@@ -1,0 +1,24 @@
+{
+	"name": "spaanproductions/office365-laravel",
+	"description": "A Office365 package for Laravel 9.0 or higher",
+	"type": "package",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Sonny Spaan (Spaan Productions)",
+			"email": "info@spaanproductions.nl"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=8.0",
+		"illuminate/support": "^9.0.0",
+		"league/oauth2-client": "^2.6.0",
+		"microsoft/microsoft-graph": "^1.0.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"SpaanProductions\\Office365\\": "src/"
+		}
+	}
+}
