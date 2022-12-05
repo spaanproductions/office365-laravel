@@ -65,7 +65,7 @@ class AuthController extends Controller
 }
  ````
 
-Methods supported by this package and their parameters can be found in the [API Reference](https://docs.microsoft.com/en-us/outlook/rest/php-tutorial) 
+Methods supported by this package and their parameters can be found in the [API Reference](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0) 
 
 ## Issues
 If you have any questions or issues, please open an Issue .
