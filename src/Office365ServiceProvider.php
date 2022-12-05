@@ -5,7 +5,7 @@ namespace SpaanProductions\Office365;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class Office365ServiceProvider extends BaseServiceProvider
 {
     /**
      * Boot the service provider.
@@ -15,7 +15,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->app->bind(Office365::class, function (Container $app) {
-            return new Office365($app);
+            return new Office365($app->make('config')->get('office365'));
         });
     }
 

@@ -7,27 +7,26 @@ A Office365 package for Laravel 9.0 or higher
 ````
 composer require spaanproductions/office365-laravel
 ````
-After install this package you have to set the service provider on your config/app.php file
 
+This package wil register this ServiceProvider automatically in Laravel.
 ````
-SpaanProductions\Office365\ServiceProvider::class,
-````
-
-To use the facade add this to the facades in app/config/app.php
-````
-'Office365' => SpaanProductions\Office365\Facade\Office365::class,
-````
-Then you just need to publish files ! Copy and paste it
-
-````
-php artisan vendor:publish --provider="SpaanProductions\Office365\ServiceProvider"
+SpaanProductions\Office365\Office365ServiceProvider::class,
 ````
 
-Get your app id and secret from [Application Registration Portal](https://apps.dev.microsoft.com) then put it in **Environment** file
+You can optionaly publish the config files.
+````
+php artisan vendor:publish --provider="SpaanProductions\Office365\Office365ServiceProvider"
+````
+
+Get your app id and secret from [Application Registration Portal](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) 
+
+Then put them in the **environment** file
 
 ````
-OFFICE365_APP_ID=
-OFFICE365_SECRET_APP_KEY=
+OFFICE365_TENANT_ID=
+OFFICE365_CLIENT_ID=
+OFFICE365_CLIENT_SECRET=
+OFFICE365_OBJECT_ID=
 OFFICE365_REDIRECT_URI=http://localhost:8000/redirect
 OFFICE365_SCOPES='openid profile offline_access User.Read Mail.Read'
 ````
@@ -65,9 +64,8 @@ class AuthController extends Controller
     }
 }
  ````
+
 Methods supported by this package and their parameters can be found in the [API Reference](https://docs.microsoft.com/en-us/outlook/rest/php-tutorial) 
+
 ## Issues
-
-````
-
 If you have any questions or issues, please open an Issue .

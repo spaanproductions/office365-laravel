@@ -5,10 +5,13 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Sonny Spaan (Spaan Productions)",
-			"email": "info@spaanproductions.nl"
+			"name": "Spaan Productions",
+			"email": "info@spaanproductions.nl",
+			"homepage": "https://spaanproductions.nl"
 		}
 	],
+	"homepage": "https://github.com/spaanproductions/office365-laravel",
+	"keywords": ["Laravel", "Office365", "Microsoft365"],
 	"minimum-stability": "stable",
 	"require": {
 		"php": ">=8.0",
@@ -19,6 +22,13 @@
 	"autoload": {
 		"psr-4": {
 			"SpaanProductions\\Office365\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"SpaanProductions\\Office365\\Office365ServiceProvider"
+			]
 		}
 	}
 }
