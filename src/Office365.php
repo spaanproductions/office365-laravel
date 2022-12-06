@@ -87,7 +87,7 @@ class Office365
 		$this->graph->setAccessToken($user_access_token);
 
 		return $this->graph
-			->createRequest('GET', "/users/{$mailboxId}/messages")
+			->createRequest('GET', "/users/{$mailboxId}/mailfolders/inbox/messages")
 			->setReturnType(Model\Message::class)
 			->execute();
 	}
