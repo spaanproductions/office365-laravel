@@ -87,7 +87,8 @@ class Office365
 		$this->graph->setAccessToken($user_access_token);
 
 		return $this->graph
-			->createRequest('GET', "/users/{$mailboxId}/mailfolders/inbox/messages")
+			->createRequest('GET', "/users/{$mailboxId}/mailfolders/inbox/messages?\$expand=attachments")
+			->addHeaders(['Prefer' => 'outlook.body-content-type=text'])
 			->setReturnType(Model\Message::class)
 			->execute();
 	}
